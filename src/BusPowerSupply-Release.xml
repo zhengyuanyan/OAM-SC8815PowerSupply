@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
+
+  <op:config href="BusPowerSupply.conf.xml" />
+
+  <op:ETS OpenKnxId="0xA6"
+    ApplicationNumber="0x08"
+    ApplicationVersion="%BPS_ApplicationVersion%"
+    ReplacesVersions="%BPS_ReplacesVersions%"
+    ApplicationRevision="0"
+    ProductName="Busspannungsversorgung"
+    ApplicationName="AB-BusPowerSupply-Logic"
+    OrderNumber="OpenKnxBusPowerSupply"
+  />
+  <op:define prefix="BASE" ModuleType="10"
+    share="../lib/OGM-Common/src/Common.share.xml">
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="UCT"
+    share="../../OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
+    noConfigTransfer="true"
+    ModuleType="99">
+    <op:verify File="../../OFM-ConfigTransfer/library.json" ModuleVersion="%UCT_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="BPS"
+    share="../lib/OFM-BusPowerSupply/src/BusPowerSupplyModule.share.xml"
+    NumChannels="8"
+    KoSingleOffset="20"
+    ModuleType="20">
+    <op:verify File="../lib/OFM-BusPowerSupply/library.json" ModuleVersion="%BPS_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="LOG"
+    share="../lib/OFM-LogicModule/src/Logikmodul.share.xml"
+    template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
+    NumChannels="99"
+    KoOffset="100"
+    ModuleType="10">
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="%LOG_VerifyVersion%" />
+  </op:define> <!-- 3 KOs/Ch = 297 -->
+
+  <op:define prefix="FCB"
+    ModuleType="30"
+    share="../lib/OFM-FunctionBlocks/src/FunctionBlocks.share.xml"
+    template="../lib/OFM-FunctionBlocks/src/FunctionBlocks.templ.xml"
+    NumChannels="10"
+    KoOffset="400">
+    <op:verify File="../lib/OFM-FunctionBlocks/library.json" ModuleVersion="%FCB_VerifyVersion%" /> 
+  </op:define> <!-- 10 KOs/Ch = 100 -->
+
+  <generate />
+</KNX>

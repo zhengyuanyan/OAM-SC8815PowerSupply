@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
+
+  <op:config href="BusPowerSupply.conf.xml" />
+
+  <op:nowarn id="1" regex="BPS_ApplicationVersion" />
+  <op:nowarn id="1" regex="BPS_ReplacesVersions" />
+
+  <op:ETS OpenKnxId="0xAF"
+    ApplicationNumber="0x08"
+    ApplicationVersion="0.9"
+    ReplacesVersions="0.8 0.7 0.6 0.5 0.0"
+    ApplicationRevision="0"
+    
+    ProductName="SC8815 总线电源"
+    ApplicationName="SC-BusPowerSupply"
+    OrderNumber="OpenKnxBusPowerSupply"
+    BaggagesRootDir="A6/08"
+  />
+  <op:define prefix="BASE" ModuleType="10"
+             share="../lib/OGM-Common/src/Common.share.xml">
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="%BASE_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="UCT"
+             share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
+             ModuleType="99">
+    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="%UCT_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="BPS"
+    share="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml"
+    KoSingleOffset="20"
+    ModuleType="20">
+    <op:verify File="../lib/OFM-SC8815PowerSupply/library.json" ModuleVersion="%BPS_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="BUZ"
+    share="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml"
+    KoSingleOffset="40"
+    ModuleType="21">
+    <op:verify File="../lib/OFM-BuzzerAlert/library.json" ModuleVersion="%BUZ_VerifyVersion%" />
+  </op:define>
+
+  <op:define prefix="DSP"
+    share="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml"
+    ModuleType="22">
+    <op:verify File="../lib/OFM-PowerSupplyDisplay/library.json" ModuleVersion="%DSP_VerifyVersion%" />
+  </op:define>
+
+  <generate />
+</KNX>

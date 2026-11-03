@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX oldxmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
+  <ManufacturerData>
+    <Manufacturer RefId="M-00FA">
+      <Catalog>
+        <CatalogSection Id="M-00FA_CS-OpenKNX" Name="OpenKNX" Number="OpenKNX" DefaultLanguage="de-DE">
+          <CatalogItem Id="%CatalogItemId%" Name="OpenKNX: SC8815 总线电源" Number="1" ProductRefId="%ProductId%" Hardware2ProgramRefId="%Hardware2ProgramId%" DefaultLanguage="de-DE" />
+        </CatalogSection>
+      </Catalog>
+      <ApplicationPrograms>
+        <op:version OpenKnxId="0xAF" ApplicationNumber="8" ApplicationVersion="9" ReplacesVersions="8 7 6 5 0" ApplicationRevision="0" FirmwareRevision="-1" />
+        <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="SC-BusPowerSupply" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de-DE" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.0" ContextHelpFile="%FILE-HELP-de%" IconFile="%FILE-ICONS%" IPConfig="Custom" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
+          <Static>
+            <Code>
+              <RelativeSegment Id="%AID%_RS-04-00000" Name="Parameters" Offset="0" Size="%MemorySize%" LoadStateMachine="4" />
+            </Code>
+            <ParameterTypes>
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="DSP" />
+            </ParameterTypes>
+            <Parameters>
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="DSP" />
+            </Parameters>
+            <ParameterRefs>
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="DSP" />
+            </ParameterRefs>
+            <ParameterCalculations>
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="DSP" />
+            </ParameterCalculations>
+            <ParameterValidations>
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="DSP" />
+            </ParameterValidations>
+            <ComObjectTable>
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="DSP" />
+            </ComObjectTable>
+            <ComObjectRefs>
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="DSP" />
+            </ComObjectRefs>
+            <AddressTable MaxEntries="2047" />
+            <AssociationTable MaxEntries="2047" />
+            <LoadProcedures>
+              <LoadProcedure MergeId="1">
+                <LdCtrlCompareProp InlineData="%VersionCheck%" ObjIdx="0" PropId="78">
+                  <OnError Cause="CompareMismatch" MessageRef="%AID%_M-1" />
+                </LdCtrlCompareProp>
+              </LoadProcedure>
+              <LoadProcedure MergeId="2">
+                <LdCtrlRelSegment LsmIdx="4" Size="%MemorySize%" Mode="1" Fill="0" AppliesTo="full" />
+                <LdCtrlRelSegment LsmIdx="4" Size="%MemorySize%" Mode="0" Fill="0" AppliesTo="par" />
+              </LoadProcedure>
+              <LoadProcedure MergeId="4">
+                <LdCtrlWriteRelMem ObjIdx="4" Offset="0" Size="%MemorySize%" Verify="true" AppliesTo="full,par" />
+              </LoadProcedure>
+              <LoadProcedure MergeId="7">
+                <LdCtrlLoadImageProp ObjIdx="4" PropId="27" />
+              </LoadProcedure>
+            </LoadProcedures>
+            <Extension />
+            <Messages>
+              <Message Id="%AID%_M-1" Name="VersionMismatch" Text="Diese Applikation und die installierte Firmware passen nicht zusammen." />
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="DSP" />
+            </Messages>
+            <Script>
+              <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="BASE" />
+              <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="UCT" />
+              <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="BPS" />
+              <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="BUZ" />
+              <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="DSP" />
+            </Script>
+            <Options TextParameterEncoding="iso-8859-15" SupportsExtendedMemoryServices="true" SupportsExtendedPropertyServices="true" />
+          </Static>
+          <ModuleDefs>
+            <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="BASE" />
+            <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="UCT" />
+            <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="BPS" />
+            <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="BUZ" />
+            <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="DSP" />
+          </ModuleDefs>
+          <Dynamic>
+            <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="BASE" />
+            <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="UCT" />
+            <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="BPS" />
+            <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="BUZ" />
+            <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="DSP" />
+          </Dynamic>
+        </ApplicationProgram>
+      </ApplicationPrograms>
+      <Baggages>
+        <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//Manufacturer/Baggages/*" prefix="BASE" />
+        <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//Manufacturer/Baggages/*" prefix="UCT" />
+        <op:include href="../lib/OFM-SC8815PowerSupply/src/SC8815PowerSupplyModule.share.xml" xpath="//Manufacturer/Baggages/*" prefix="BPS" />
+        <op:include href="../lib/OFM-BuzzerAlert/src/BuzzerAlertModule.share.xml" xpath="//Manufacturer/Baggages/*" prefix="BUZ" />
+        <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//Manufacturer/Baggages/*" prefix="DSP" />
+      </Baggages>
+      <Hardware>
+        <Hardware Id="%HardwareId%" Name="OpenKNX-SC8815 总线电源" SerialNumber="0xAF08" VersionNumber="1" BusCurrent="10" HasIndividualAddress="true" HasApplicationProgram="true">
+          <Products>
+            <Product Id="%ProductId%" Text="OpenKNX: SC8815 总线电源" OrderNumber="OpenKnxBusPowerSupply" IsRailMounted="false" DefaultLanguage="de-DE">
+              <RegistrationInfo RegistrationStatus="Registered" />
+            </Product>
+          </Products>
+          <Hardware2Programs>
+            <Hardware2Program Id="%Hardware2ProgramId%" MediumTypes="MT-0">
+              <ApplicationProgramRef RefId="%AID%" />
+              <RegistrationInfo RegistrationStatus="Registered" RegistrationNumber="0001/%HardwareVersionEncoded%1" />
+            </Hardware2Program>
+          </Hardware2Programs>
+        </Hardware>
+      </Hardware>
+    </Manufacturer>
+  </ManufacturerData>
+</KNX>

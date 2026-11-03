@@ -1,0 +1,17 @@
+[
+  {
+    "comment": "OpenKNXproducer: hard coded placeholder in PT-ModuleSelector / PT-ModuleSelectorWithChannels (ExtendedEtsSupport.cs -> GenerateModuleSelector)",
+    "search": "Bitte wählen...",
+    "replace": "请选择..."
+  },
+  {
+    "comment": "OpenKNXproducer: hard coded in the application template (xml/TemplateApplication.xml), Message 'VersionMismatch'",
+    "search": "Diese Applikation und die installierte Firmware passen nicht zusammen.",
+    "replace": "此应用与已安装的固件不匹配。"
+  },
+  {
+    "comment": "OFM-ConfigTransfer: Message 'InvalidTransferString' (ConfigTransfer.share.xml)",
+    "search": "Kein gültiger/vollständiger OpenKNX-ConfigTransfer-String. Erwarte mindestens Beginn &quot;OpenKNX,&quot; und Ende &quot;§;OpenKNX&quot;.",
+    "replace": "无效或不完整的 OpenKNX ConfigTransfer 字符串。至少应以 &quot;OpenKNX,&quot; 开头并以 &quot;§;OpenKNX&quot; 结尾。"
+  }
+]

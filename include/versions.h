@@ -1,6 +1,6 @@
 #pragma once
 
-#define MAIN_Version "1fc3c63"
+#define MAIN_Version "cba100f"
 #define KNX_Version "2.2.2+f6111d3"
 #define MODULE_BuzzerAlert_Version "0.1.0+7f065e1"
 #define MODULE_BuzzerAlert_Version_Major 0

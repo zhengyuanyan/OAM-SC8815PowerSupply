@@ -18,7 +18,7 @@
             <ParameterTypes>
               <ParameterType Id="M-00FA_A-AF08-09-0000_PT-ModuleSelector" Name="ModuleSelector">
                 <TypeRestriction Base="Value" SizeInBit="8" UIHint="DropDown">
-                  <Enumeration Text="Bitte wählen..." Value="255" Id="M-00FA_A-AF08-09-0000_PT-ModuleSelector_EN-255" />
+                  <Enumeration Text="请选择..." Value="255" Id="M-00FA_A-AF08-09-0000_PT-ModuleSelector_EN-255" />
                   <Enumeration Text="OpenKNX" Value="0" Id="M-00FA_A-AF08-09-0000_PT-ModuleSelector_EN-0" />
                   <Enumeration Text="SC8815 电源" Value="1" Id="M-00FA_A-AF08-09-0000_PT-ModuleSelector_EN-1" />
                   <Enumeration Text="蜂鸣器报警" Value="2" Id="M-00FA_A-AF08-09-0000_PT-ModuleSelector_EN-2" />
@@ -27,7 +27,7 @@
               </ParameterType>
               <ParameterType Id="M-00FA_A-AF08-09-0000_PT-ModuleSelectorWithChannels" Name="ModuleSelectorWithChannels">
                 <TypeRestriction Base="Value" SizeInBit="8" UIHint="DropDown">
-                  <Enumeration Text="Bitte wählen..." Value="255" Id="M-00FA_A-AF08-09-0000_PT-ModuleSelectorWithChannels_EN-255" />
+                  <Enumeration Text="请选择..." Value="255" Id="M-00FA_A-AF08-09-0000_PT-ModuleSelectorWithChannels_EN-255" />
                 </TypeRestriction>
               </ParameterType>
               <ParameterType Id="M-00FA_A-AF08-09-0000_PT-ETS" Name="ETS">
@@ -1158,8 +1158,8 @@
               <Baggage RefId="M-00FA_BG-A6.5C08-Icons.2Ezip" />
             </Extension>
             <Messages>
-              <Message Id="M-00FA_A-AF08-09-0000_M-1" Name="VersionMismatch" Text="Diese Applikation und die installierte Firmware passen nicht zusammen." />
-              <Message Id="M-00FA_A-AF08-09-0000_M-9900001" Name="UCT_InvalidTransferString" Text="Kein gültiger/vollständiger OpenKNX-ConfigTransfer-String. Erwarte mindestens Beginn &quot;OpenKNX,&quot; und Ende &quot;§;OpenKNX&quot;." />
+              <Message Id="M-00FA_A-AF08-09-0000_M-1" Name="VersionMismatch" Text="此应用与已安装的固件不匹配。" />
+              <Message Id="M-00FA_A-AF08-09-0000_M-9900001" Name="UCT_InvalidTransferString" Text="无效或不完整的 OpenKNX ConfigTransfer 字符串。至少应以 &quot;OpenKNX,&quot; 开头并以 &quot;§;OpenKNX&quot; 结尾。" />
             </Messages>
             <Script>
 var baseModuleIdPrefix = ["BASE","UCT","BPS","BUZ","DSP"];
@@ -3453,13 +3453,13 @@ function uctParamResetNothing(input, output, context) {
       </ApplicationPrograms>
       <Baggages>
         <Baggage TargetPath="A6\08" Name="ets.png" Id="M-00FA_BG-A6.5C08-ets.2Epng">
-          <FileInfo TimeInfo="2026-11-03T12:05:53.0793133Z" />
+          <FileInfo TimeInfo="2026-11-03T12:13:13.7907165Z" />
         </Baggage>
         <Baggage TargetPath="A6\08" Name="Help_cn.zip" Id="M-00FA_BG-A6.5C08-Help.5Fcn.2Ezip">
-          <FileInfo TimeInfo="2026-11-03T12:05:53.4096095Z" />
+          <FileInfo TimeInfo="2026-11-03T12:13:14.1063911Z" />
         </Baggage>
         <Baggage TargetPath="A6\08" Name="Icons.zip" Id="M-00FA_BG-A6.5C08-Icons.2Ezip">
-          <FileInfo TimeInfo="2026-11-03T12:05:53.6294855Z" />
+          <FileInfo TimeInfo="2026-11-03T12:13:14.3509540Z" />
         </Baggage>
       </Baggages>
       <Hardware>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Content>
+    <ETSapp Name="BusPowerSupply" XmlFile="BusPowerSupply.xml" />
+    <Products>
+         <Product Name="AB-SmartHouse-BusPowerSupply-REG6" Firmware="../Firmware/AB-SmartHouse-BusPowerSupply-REG6/firmware-AB-SmartHouse-BusPowerSupply-REG6.uf2" Processor="RP2040" />
+    </Products>
+</Content>

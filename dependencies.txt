@@ -5,5 +5,4 @@ f6111d3 v1 lib/knx https://github.com/OpenKNX/knx.git
 178f186 v1 lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTransferModule.git
 c1f4cac main lib/OFM-SC8815PowerSupply https://github.com/zhengyuanyan/OFM-SC8815PowerSupply.git
 7f065e1 main lib/OFM-BuzzerAlert https://github.com/zhengyuanyan/OFM-BuzzerAlert.git
-3691f78 main lib/OFM-PowerSupplyDisplay https://github.com/zhengyuanyan/OFM-PowerSupplyDisplay.git
- 
+b7616d7 main lib/OFM-PowerSupplyDisplay https://github.com/zhengyuanyan/OFM-PowerSupplyDisplay.git

@@ -47,6 +47,14 @@
 
     #define OPENKNX_BPS_BUZZER_ALERT_PIN 29
 
+    // A/B 路输入电源供电状态（只读输入）：对应那一路正在供电时 = HIGH
+    #define OPENKNX_BPS_INPUT_A_POWER_STATUS_PIN 27
+    #define OPENKNX_BPS_INPUT_A_POWER_STATUS_ACTIVE_ON HIGH
+    #define OPENKNX_BPS_INPUT_B_POWER_STATUS_PIN 28
+    #define OPENKNX_BPS_INPUT_B_POWER_STATUS_ACTIVE_ON HIGH
+
+
+
     // ---- 1.54" ST7789 240x240 SPI 显示（模块 OFM-PowerSupplyDisplay）----
     // 引脚按实际接线填：SCK/MOSI/CS/DC/RST/BL。
     // RST = -1 表示屏幕复位脚未接 MCU（由板级上电复位控制）。

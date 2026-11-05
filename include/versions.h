@@ -1,6 +1,6 @@
 #pragma once
 
-#define MAIN_Version "ebaff64"
+#define MAIN_Version "ef89f67"
 #define KNX_Version "2.2.2+f6111d3"
 #define MODULE_BuzzerAlert_Version "0.1.0+7f065e1"
 #define MODULE_BuzzerAlert_Version_Major 0
@@ -22,8 +22,8 @@
 #define MODULE_PowerSupplyDisplay_Version_Minor 1
 #define MODULE_PowerSupplyDisplay_Version_Revision 0
 #define MODULE_PowerSupplyDisplay_ETS 1
-#define MODULE_BusPowerSupply_Version "0.1.0"
+#define MODULE_BusPowerSupply_Version "0.2.0"
 #define MODULE_BusPowerSupply_Version_Major 0
-#define MODULE_BusPowerSupply_Version_Minor 1
+#define MODULE_BusPowerSupply_Version_Minor 2
 #define MODULE_BusPowerSupply_Version_Revision 0
-#define MODULE_BusPowerSupply_ETS 1
+#define MODULE_BusPowerSupply_ETS 2

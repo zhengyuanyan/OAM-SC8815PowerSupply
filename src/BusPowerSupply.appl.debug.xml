@@ -5,11 +5,11 @@
     <Manufacturer RefId="M-00FA">
       <Catalog>
         <CatalogSection Id="M-00FA_CS-OpenKNX" Name="OpenKNX" Number="OpenKNX" DefaultLanguage="de-DE">
-          <CatalogItem Id="%CatalogItemId%" Name="OpenKNX: SC8815 总线电源" Number="1" ProductRefId="%ProductId%" Hardware2ProgramRefId="%Hardware2ProgramId%" DefaultLanguage="de-DE" />
+          <CatalogItem Id="%CatalogItemId%" Name="OpenKNX: SC8815 总线电源 V10" Number="1" ProductRefId="%ProductId%" Hardware2ProgramRefId="%Hardware2ProgramId%" DefaultLanguage="de-DE" />
         </CatalogSection>
       </Catalog>
       <ApplicationPrograms>
-        <op:version OpenKnxId="0xAF" ApplicationNumber="8" ApplicationVersion="9" ReplacesVersions="8 7 6 5 0" ApplicationRevision="0" FirmwareRevision="-1" />
+        <op:version OpenKnxId="0xAF" ApplicationNumber="8" ApplicationVersion="10" ReplacesVersions="9 8 7 6 5 0" ApplicationRevision="0" FirmwareRevision="-1" />
         <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="SC-BusPowerSupply" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de-DE" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.0" ContextHelpFile="%FILE-HELP-de%" IconFile="%FILE-ICONS%" IPConfig="Custom" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
           <Static>
             <Code>
@@ -125,9 +125,9 @@
         <op:include href="../lib/OFM-PowerSupplyDisplay/src/PowerSupplyDisplay.share.xml" xpath="//Manufacturer/Baggages/*" prefix="DSP" />
       </Baggages>
       <Hardware>
-        <Hardware Id="%HardwareId%" Name="OpenKNX-SC8815 总线电源" SerialNumber="0xAF08" VersionNumber="1" BusCurrent="10" HasIndividualAddress="true" HasApplicationProgram="true">
+        <Hardware Id="%HardwareId%" Name="OpenKNX-SC8815 总线电源 V10" SerialNumber="0xAF08" VersionNumber="1" BusCurrent="10" HasIndividualAddress="true" HasApplicationProgram="true">
           <Products>
-            <Product Id="%ProductId%" Text="OpenKNX: SC8815 总线电源" OrderNumber="OpenKnxBusPowerSupply" IsRailMounted="false" DefaultLanguage="de-DE">
+            <Product Id="%ProductId%" Text="OpenKNX: SC8815 总线电源 V10" OrderNumber="OpenKnxBusPowerSupply" IsRailMounted="false" DefaultLanguage="de-DE">
               <RegistrationInfo RegistrationStatus="Registered" />
             </Product>
           </Products>

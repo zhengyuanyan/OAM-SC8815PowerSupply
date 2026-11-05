@@ -14,17 +14,17 @@
 #define ETS_ModuleId_BPS 3
 #define ETS_ModuleId_BUZ 4
 #define ETS_ModuleId_DSP 5
-#define MAIN_FirmwareName "SC8815"
+#define MAIN_FirmwareName "SC8815 - V10"
 #define MAIN_OpenKnxId 0xAF
 #define MAIN_ApplicationNumber 8
-#define MAIN_ApplicationVersion 9
+#define MAIN_ApplicationVersion 10
 #define MAIN_ApplicationEncoding iso-8859-15
-#define MAIN_ParameterSize 202
+#define MAIN_ParameterSize 203
 #define MAIN_MaxKoNumber 40
 #define MAIN_OrderNumber "OpenKnxBusPowerSupply"
 #define BASE_ModuleVersion 25
 #define UCT_ModuleVersion 5
-#define BPS_ModuleVersion 1
+#define BPS_ModuleVersion 2
 #define BUZ_ModuleVersion 1
 #define DSP_ModuleVersion 1
 // Parameter with single occurrence
@@ -357,8 +357,9 @@
 #define BPS_AuxLoadSendCyclicTime               186      // 14 Bits, Bit 13-0
 #define     BPS_AuxLoadSendCyclicTimeMask 0x3FFF
 #define     BPS_AuxLoadSendCyclicTimeShift 0
+#define BPS_AuxResetTime                        188      // uint8_t
 
-// 复位时间
+// 总线复位时间
 #define ParamBPS_ResetTime                           (knx.paramByte(BPS_ResetTime))
 // 发送总线电源状态
 #define ParamBPS_PowerSupply1ChangeSend              ((bool)(knx.paramByte(BPS_PowerSupply1ChangeSend) & BPS_PowerSupply1ChangeSendMask))
@@ -532,6 +533,8 @@
 #define ParamBPS_AuxLoadSendCyclicTime               (knx.paramWord(BPS_AuxLoadSendCyclicTime) & BPS_AuxLoadSendCyclicTimeMask)
 // 时间 (in Millisekunden)
 #define ParamBPS_AuxLoadSendCyclicTimeMS             (paramDelay(knx.paramWord(BPS_AuxLoadSendCyclicTime)))
+// 辅助电源复位时间
+#define ParamBPS_AuxResetTime                        (knx.paramByte(BPS_AuxResetTime))
 
 #define BPS_KoPowerSupply1Status 20
 #define BPS_KoPowerSupply2Status 21
@@ -595,106 +598,106 @@
 // 辅助电源复位
 #define KoBPS_AuxReset                            (knx.getGroupObject(BPS_KoAuxReset))
 
-#define BUZ_Enabled                             188      // 1 Bit, Bit 7
+#define BUZ_Enabled                             189      // 1 Bit, Bit 7
 #define     BUZ_EnabledMask 0x80
 #define     BUZ_EnabledShift 7
-#define BUZ_Frequency                           189      // 6 Bits, Bit 7-2
+#define BUZ_Frequency                           190      // 6 Bits, Bit 7-2
 #define     BUZ_FrequencyMask 0xFC
 #define     BUZ_FrequencyShift 2
-#define BUZ_BusSC8815NoAnswer                   190      // 1 Bit, Bit 7
+#define BUZ_BusSC8815NoAnswer                   191      // 1 Bit, Bit 7
 #define     BUZ_BusSC8815NoAnswerMask 0x80
 #define     BUZ_BusSC8815NoAnswerShift 7
-#define BUZ_BusINANoAnswer                      190      // 1 Bit, Bit 6
+#define BUZ_BusINANoAnswer                      191      // 1 Bit, Bit 6
 #define     BUZ_BusINANoAnswerMask 0x40
 #define     BUZ_BusINANoAnswerShift 6
-#define BUZ_BusTempNoAnswer                     190      // 1 Bit, Bit 5
+#define BUZ_BusTempNoAnswer                     191      // 1 Bit, Bit 5
 #define     BUZ_BusTempNoAnswerMask 0x20
 #define     BUZ_BusTempNoAnswerShift 5
-#define BUZ_BusVbusShort                        190      // 1 Bit, Bit 4
+#define BUZ_BusVbusShort                        191      // 1 Bit, Bit 4
 #define     BUZ_BusVbusShortMask 0x10
 #define     BUZ_BusVbusShortShift 4
-#define BUZ_BusOTP                              190      // 1 Bit, Bit 3
+#define BUZ_BusOTP                              191      // 1 Bit, Bit 3
 #define     BUZ_BusOTPMask 0x08
 #define     BUZ_BusOTPShift 3
-#define BUZ_BusOverCurrent                      190      // 1 Bit, Bit 2
+#define BUZ_BusOverCurrent                      191      // 1 Bit, Bit 2
 #define     BUZ_BusOverCurrentMask 0x04
 #define     BUZ_BusOverCurrentShift 2
-#define BUZ_BusInputHigh                        190      // 1 Bit, Bit 1
+#define BUZ_BusInputHigh                        191      // 1 Bit, Bit 1
 #define     BUZ_BusInputHighMask 0x02
 #define     BUZ_BusInputHighShift 1
-#define BUZ_BusInputLow                         190      // 1 Bit, Bit 0
+#define BUZ_BusInputLow                         191      // 1 Bit, Bit 0
 #define     BUZ_BusInputLowMask 0x01
 #define     BUZ_BusInputLowShift 0
-#define BUZ_AuxSC8815NoAnswer                   191      // 1 Bit, Bit 7
+#define BUZ_AuxSC8815NoAnswer                   192      // 1 Bit, Bit 7
 #define     BUZ_AuxSC8815NoAnswerMask 0x80
 #define     BUZ_AuxSC8815NoAnswerShift 7
-#define BUZ_AuxINANoAnswer                      191      // 1 Bit, Bit 6
+#define BUZ_AuxINANoAnswer                      192      // 1 Bit, Bit 6
 #define     BUZ_AuxINANoAnswerMask 0x40
 #define     BUZ_AuxINANoAnswerShift 6
-#define BUZ_AuxTempNoAnswer                     191      // 1 Bit, Bit 5
+#define BUZ_AuxTempNoAnswer                     192      // 1 Bit, Bit 5
 #define     BUZ_AuxTempNoAnswerMask 0x20
 #define     BUZ_AuxTempNoAnswerShift 5
-#define BUZ_AuxVbusShort                        191      // 1 Bit, Bit 4
+#define BUZ_AuxVbusShort                        192      // 1 Bit, Bit 4
 #define     BUZ_AuxVbusShortMask 0x10
 #define     BUZ_AuxVbusShortShift 4
-#define BUZ_AuxOTP                              191      // 1 Bit, Bit 3
+#define BUZ_AuxOTP                              192      // 1 Bit, Bit 3
 #define     BUZ_AuxOTPMask 0x08
 #define     BUZ_AuxOTPShift 3
-#define BUZ_AuxOverCurrent                      191      // 1 Bit, Bit 2
+#define BUZ_AuxOverCurrent                      192      // 1 Bit, Bit 2
 #define     BUZ_AuxOverCurrentMask 0x04
 #define     BUZ_AuxOverCurrentShift 2
-#define BUZ_AuxInputHigh                        191      // 1 Bit, Bit 1
+#define BUZ_AuxInputHigh                        192      // 1 Bit, Bit 1
 #define     BUZ_AuxInputHighMask 0x02
 #define     BUZ_AuxInputHighShift 1
-#define BUZ_AuxInputLow                         191      // 1 Bit, Bit 0
+#define BUZ_AuxInputLow                         192      // 1 Bit, Bit 0
 #define     BUZ_AuxInputLowMask 0x01
 #define     BUZ_AuxInputLowShift 0
-#define BUZ_BusSC8815NoAnswerRhythm             192      // 3 Bits, Bit 7-5
+#define BUZ_BusSC8815NoAnswerRhythm             193      // 3 Bits, Bit 7-5
 #define     BUZ_BusSC8815NoAnswerRhythmMask 0xE0
 #define     BUZ_BusSC8815NoAnswerRhythmShift 5
-#define BUZ_BusINANoAnswerRhythm                192      // 3 Bits, Bit 4-2
+#define BUZ_BusINANoAnswerRhythm                193      // 3 Bits, Bit 4-2
 #define     BUZ_BusINANoAnswerRhythmMask 0x1C
 #define     BUZ_BusINANoAnswerRhythmShift 2
-#define BUZ_BusTempNoAnswerRhythm               193      // 3 Bits, Bit 7-5
+#define BUZ_BusTempNoAnswerRhythm               194      // 3 Bits, Bit 7-5
 #define     BUZ_BusTempNoAnswerRhythmMask 0xE0
 #define     BUZ_BusTempNoAnswerRhythmShift 5
-#define BUZ_BusVbusShortRhythm                  193      // 3 Bits, Bit 4-2
+#define BUZ_BusVbusShortRhythm                  194      // 3 Bits, Bit 4-2
 #define     BUZ_BusVbusShortRhythmMask 0x1C
 #define     BUZ_BusVbusShortRhythmShift 2
-#define BUZ_BusOTPRhythm                        194      // 3 Bits, Bit 7-5
+#define BUZ_BusOTPRhythm                        195      // 3 Bits, Bit 7-5
 #define     BUZ_BusOTPRhythmMask 0xE0
 #define     BUZ_BusOTPRhythmShift 5
-#define BUZ_BusOverCurrentRhythm                194      // 3 Bits, Bit 4-2
+#define BUZ_BusOverCurrentRhythm                195      // 3 Bits, Bit 4-2
 #define     BUZ_BusOverCurrentRhythmMask 0x1C
 #define     BUZ_BusOverCurrentRhythmShift 2
-#define BUZ_BusInputHighRhythm                  195      // 3 Bits, Bit 7-5
+#define BUZ_BusInputHighRhythm                  196      // 3 Bits, Bit 7-5
 #define     BUZ_BusInputHighRhythmMask 0xE0
 #define     BUZ_BusInputHighRhythmShift 5
-#define BUZ_BusInputLowRhythm                   195      // 3 Bits, Bit 4-2
+#define BUZ_BusInputLowRhythm                   196      // 3 Bits, Bit 4-2
 #define     BUZ_BusInputLowRhythmMask 0x1C
 #define     BUZ_BusInputLowRhythmShift 2
-#define BUZ_AuxSC8815NoAnswerRhythm             196      // 3 Bits, Bit 7-5
+#define BUZ_AuxSC8815NoAnswerRhythm             197      // 3 Bits, Bit 7-5
 #define     BUZ_AuxSC8815NoAnswerRhythmMask 0xE0
 #define     BUZ_AuxSC8815NoAnswerRhythmShift 5
-#define BUZ_AuxINANoAnswerRhythm                196      // 3 Bits, Bit 4-2
+#define BUZ_AuxINANoAnswerRhythm                197      // 3 Bits, Bit 4-2
 #define     BUZ_AuxINANoAnswerRhythmMask 0x1C
 #define     BUZ_AuxINANoAnswerRhythmShift 2
-#define BUZ_AuxTempNoAnswerRhythm               197      // 3 Bits, Bit 7-5
+#define BUZ_AuxTempNoAnswerRhythm               198      // 3 Bits, Bit 7-5
 #define     BUZ_AuxTempNoAnswerRhythmMask 0xE0
 #define     BUZ_AuxTempNoAnswerRhythmShift 5
-#define BUZ_AuxVbusShortRhythm                  197      // 3 Bits, Bit 4-2
+#define BUZ_AuxVbusShortRhythm                  198      // 3 Bits, Bit 4-2
 #define     BUZ_AuxVbusShortRhythmMask 0x1C
 #define     BUZ_AuxVbusShortRhythmShift 2
-#define BUZ_AuxOTPRhythm                        198      // 3 Bits, Bit 7-5
+#define BUZ_AuxOTPRhythm                        199      // 3 Bits, Bit 7-5
 #define     BUZ_AuxOTPRhythmMask 0xE0
 #define     BUZ_AuxOTPRhythmShift 5
-#define BUZ_AuxOverCurrentRhythm                198      // 3 Bits, Bit 4-2
+#define BUZ_AuxOverCurrentRhythm                199      // 3 Bits, Bit 4-2
 #define     BUZ_AuxOverCurrentRhythmMask 0x1C
 #define     BUZ_AuxOverCurrentRhythmShift 2
-#define BUZ_AuxInputHighRhythm                  199      // 3 Bits, Bit 7-5
+#define BUZ_AuxInputHighRhythm                  200      // 3 Bits, Bit 7-5
 #define     BUZ_AuxInputHighRhythmMask 0xE0
 #define     BUZ_AuxInputHighRhythmShift 5
-#define BUZ_AuxInputLowRhythm                   199      // 3 Bits, Bit 4-2
+#define BUZ_AuxInputLowRhythm                   200      // 3 Bits, Bit 4-2
 #define     BUZ_AuxInputLowRhythmMask 0x1C
 #define     BUZ_AuxInputLowRhythmShift 2
 
@@ -772,13 +775,13 @@
 // 蜂鸣器静音
 #define KoBUZ_Mute                                (knx.getGroupObject(BUZ_KoMute))
 
-#define DSP_Enabled                             200      // 1 Bit, Bit 7
+#define DSP_Enabled                             201      // 1 Bit, Bit 7
 #define     DSP_EnabledMask 0x80
 #define     DSP_EnabledShift 7
-#define DSP_BacklightTimeout                    200      // 3 Bits, Bit 6-4
+#define DSP_BacklightTimeout                    201      // 3 Bits, Bit 6-4
 #define     DSP_BacklightTimeoutMask 0x70
 #define     DSP_BacklightTimeoutShift 4
-#define DSP_Brightness                          201      // uint8_t
+#define DSP_Brightness                          202      // uint8_t
 
 // 启用显示屏
 #define ParamDSP_Enabled                             ((bool)(knx.paramByte(DSP_Enabled) & DSP_EnabledMask))

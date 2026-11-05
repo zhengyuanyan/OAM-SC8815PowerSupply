@@ -1,6 +1,6 @@
 #pragma once
 
-#define MAIN_Version "9ce8a9e"
+#define MAIN_Version "3cab617"
 #define KNX_Version "2.2.2+f6111d3"
 #define MODULE_BuzzerAlert_Version "0.1.0+7f065e1"
 #define MODULE_BuzzerAlert_Version_Major 0
@@ -17,7 +17,7 @@
 #define MODULE_FileTransferModule_Version_Minor 1
 #define MODULE_FileTransferModule_Version_Revision 5
 #define MODULE_FileTransferModule_ETS 1
-#define MODULE_PowerSupplyDisplay_Version "0.1.0+180750d"
+#define MODULE_PowerSupplyDisplay_Version "0.1.0+b9952e0"
 #define MODULE_PowerSupplyDisplay_Version_Major 0
 #define MODULE_PowerSupplyDisplay_Version_Minor 1
 #define MODULE_PowerSupplyDisplay_Version_Revision 0
